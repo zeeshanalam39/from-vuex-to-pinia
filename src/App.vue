@@ -1,3 +1,9 @@
+<script setup>
+import { useUserStore } from './stores/UserStore';
+
+const userStore = useUserStore();
+</script>
+
 <template>
   <div id="app">
     <div id="nav">
@@ -5,6 +11,9 @@
       <router-link :to="{ name: 'About' }">About</router-link>
       |
       <router-link :to="{ name: 'EventCreate' }">Create Event</router-link>
+      <!-- <p>Logged in as {{ userStore.user }}</p> -->
+      <p>Logged in as {{ userStore.firstName }}</p>
+
     </div>
     <router-view />
   </div>
